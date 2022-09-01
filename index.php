@@ -13,7 +13,7 @@
 
 <body>
 
-<p>Hello, world! [from index.html]<?php echo " --- this is a php string ---" ?></p>
+<p>Hello, world! [from index.php]</p>
 
 <script src="js/script.js"></script>
 </body>
