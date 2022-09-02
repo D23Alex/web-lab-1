@@ -1,0 +1,2 @@
+- introduce an object that represents a request (combine point(x,y) and r)
+- put an array of such objects into $_SESSION
