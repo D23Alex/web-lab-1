@@ -198,7 +198,7 @@ if ($all_input_received) {
 
 ?>
 <p>Hello, world! [from index.php]</p>
-<form method="get">
+<form method="get" action="/">
     <p>X</p>
     <input type="radio" id="x-equals-0.5-radio" name="x-input" value="0,5">
     <label for="x-equals-0.5-input">0,5</label><br>
