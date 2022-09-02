@@ -148,17 +148,22 @@ function construct_request_history(): array
     return $request_history;
 }
 
-
+echo "debug1";
 $request_history_exists = isset($_SESSION['x_history']) && isset($_SESSION['y_history']) &&
     isset($_SESSION['r_history']);
+echo "debug2";
 $request_history_valid = $_SESSION['x_history'].count() == $_SESSION['y_history'].count() &&
     $_SESSION['r_history'].count() == $_SESSION['y_history'].count();
-
+echo "debug3";
 if ($request_history_exists && $request_history_valid) {
+    echo "debug4";
     $request_history = construct_request_history();
     //TODO: output history
+    echo "debug5";
     foreach ($request_history as $user_request)
+        echo "debug6";
     echo "<br>" . $user_request->getPoint()->getX();
+    echo "debug7";
     echo "<br>" . $user_request->getPoint()->getY();
     echo "<br>" . $user_request->getR();
 }
@@ -169,12 +174,16 @@ echo "aaa";
 
     function add_current_request_to_history()
     {
+        echo "debug9";
         $_SESSION['x_history'][] = $_GET["x_input"];
+        echo "debug10";
         $_SESSION['y_history'][] = $_GET["y_input"];
         $_SESSION['r_history'][] = $_GET["r_input"];
+        echo "debug11";
     }
 
 if ($all_input_received) {
+    echo "debug8";
     add_current_request_to_history();
 }
 
