@@ -2,6 +2,10 @@
 if (session_status() === PHP_SESSION_NONE) {
     session_start();
 }
+
+$_SESSION['x_history'] = [];
+$_SESSION['y_history'] = [];
+$_SESSION['z_history'] = [];
 ?>
 <!DOCTYPE html>
 <html>
