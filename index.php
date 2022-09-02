@@ -135,9 +135,13 @@ if (session_status() === PHP_SESSION_NONE) {
 
 echo "<br>" . "Recent history:";
 
-foreach ($_SESSION['request_history'] as $user_request) {
-    echo "<br>" . "Request" . $user_request->getPoint()->getX() . $user_request->getPoint()->getY() . $user_request->getR();
+if (isset($_SESSION['request_history'])) {
+    foreach ($_SESSION['request_history'] as $user_request) {
+        echo "<br>" . "Request" . $user_request->getPoint()->getX() . $user_request->getPoint()->getY() . $user_request->getR();
+    }
 }
+
+
 echo "aaa";
 
     function add_previous_request_to_session()
