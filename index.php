@@ -86,20 +86,20 @@ if (session_status() === PHP_SESSION_NONE) {
             return point_belongs_area_x_zero($point, $r);
         if ($point->get_y() == 0)
             return point_belongs_area_y_zero($point, $r);
-        if ($point->get_x() < 0 and $point->get_y() < 0)
+        if ($point->get_x() < 0 && $point->get_y() < 0)
             return point_belongs_to_area_bottom_left($point, $r);
-        if ($point->get_x() < 0 and $point->get_y() > 0)
+        if ($point->get_x() < 0 && $point->get_y() > 0)
             return point_belongs_to_area_top_left($point, $r);
-        if ($point->get_x() > 0 and $point->get_y() > 0)
+        if ($point->get_x() > 0 && $point->get_y() > 0)
             return point_belongs_to_area_top_right($point, $r);
-        if ($point->get_x() > 0 and $point->get_y() < 0)
+        if ($point->get_x() > 0 && $point->get_y() < 0)
             return point_belongs_to_area_bottom_right($point, $r);
         return false;
     }
 
     function point_belongs_to_area_top_right(Point $point, float $r): bool
     {
-        return $point->get_x() < ($r / 2) and $point->get_y() < $r;
+        return $point->get_x() < ($r / 2) && $point->get_y() < $r;
     }
 
     function point_belongs_to_area_bottom_right(Point $point, float $r): bool
@@ -119,51 +119,63 @@ if (session_status() === PHP_SESSION_NONE) {
 
     function point_belongs_area_y_zero(Point $point, float $r): bool
     {
-        return -1 * $r <= $point->get_x() and point->get_x() <= (r / 2);
+        return -1 * $r <= $point->get_x() && point->get_x() <= (r / 2);
     }
 
     function point_belongs_area_x_zero(Point $point, float $r): bool
     {
-        return -1 * ($r / 2) <= $point->get_y() and $point->get_y() < $r;
+        return -1 * ($r / 2) <= $point->get_y() && $point->get_y() < $r;
     }
 
     //TODO: use this when r button is fixed
     // $all_input_received = isset($_GET["x-input"]) and isset($_GET["y-input"]) and isset($_GET["r-input"]);
-    $all_input_received = isset($_GET["x-input"]) and isset($_GET["y-input"]);
+    $all_input_received = isset($_GET["x-input"]) && isset($_GET["y-input"]);
     if ($all_input_received)
         echo $_GET["x-input"] . "<br>" . $_GET["y-input"] . "<br>" . $_GET["r-input"] . "</br>";
 
 echo "<br>" . "Request history:";
 
-if (isset($_SESSION['request_history'])) {
-    $user_request_history = $_SESSION['request_history'];
-    echo "<br>" . "Before Foreach";
-    foreach ($user_request_history as $user_request_serialized) {
-        $user_request = unserialize($user_request_serialized);
-        echo "<br>" . "Request";
-        // breaks here
-        echo $user_request->getPoint()->getX();
-        echo $user_request->getPoint()->getY();
-        echo $user_request->getR();
+
+function construct_request_history(): array
+{
+    $request_history = array();
+    foreach ($_SESSION['x_history'] as $request_id=>$x) {
+        $point = new Point($_SESSION['x_history'][$request_id], $_SESSION['y_history'][$request_id]);
+        $r = $_SESSION['r_history'][$request_id];
+        $user_request = new UserRequest($point, $r);
+        $request_history[] = $user_request;
     }
+    return $request_history;
 }
+
+
+$request_history_exists = isset($_SESSION['x_history']) && isset($_SESSION['y_history']) &&
+    isset($_SESSION['r_history']);
+$request_history_valid = $_SESSION['x_history'].count() == $_SESSION['y_history'].count() &&
+    $_SESSION['r_history'].count() == $_SESSION['y_history'].count();
+
+if ($request_history_exists && $request_history_valid) {
+    $request_history = construct_request_history();
+    //TODO: output history
+    foreach ($request_history as $user_request)
+    echo "<br>" . $user_request->getPoint()->getX();
+    echo "<br>" . $user_request->getPoint()->getY();
+    echo "<br>" . $user_request->getR();
+}
+
 
 
 echo "aaa";
 
-    function add_previous_request_to_session()
+    function add_current_request_to_history()
     {
-        $point = new Point($_GET["x-input"], $_GET["y-input"]);
-        $request = new UserRequest($point, $_GET["r-input"]);
-
-        $request_history = $_SESSION['request_history'] ?? [];
-        $request_history[] = serialize($request);
-
-        $_SESSION['request_history'] = $request_history;
+        $_SESSION['x_history'][] = $_GET["x_input"];
+        $_SESSION['y_history'][] = $_GET["y_input"];
+        $_SESSION['r_history'][] = $_GET["r_input"];
     }
 
 if ($all_input_received) {
-    add_previous_request_to_session();
+    add_current_request_to_history();
 }
 
 ?>
