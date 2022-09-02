@@ -144,6 +144,7 @@ function construct_request_history(): array
 {
     $request_history = array();
     echo "debug4.1";
+    echo " _SESSION['x_history'] has this amount of elements in it: " . count($_SESSION['x_history']);
     foreach ($_SESSION['x_history'] as $request_id=>$x) {
         echo "debug4.2";
         $point = new Point($_SESSION['x_history'][$request_id], $_SESSION['y_history'][$request_id]);
@@ -189,7 +190,9 @@ echo "aaa";
     function add_current_request_to_history()
     {
         echo "debug9";
+        echo " _SESSION['x_history'] has this amount of elements in it: " . count($_SESSION['x_history']);
         $_SESSION['x_history'][] = $_GET["x_input"];
+        echo " _SESSION['x_history'] has this amount of elements in it: " . count($_SESSION['x_history']);
         echo "debug10";
         $_SESSION['y_history'][] = $_GET["y_input"];
         $_SESSION['r_history'][] = $_GET["r_input"];
