@@ -161,6 +161,7 @@ $request_history_valid = (count($_SESSION['x_history']) == count($_SESSION['y_hi
 echo "debug3";
 if ($request_history_exists && $request_history_valid) {
     echo "debug4";
+    //TODO: fix that this is somehow empty
     $request_history = construct_request_history();
     //TODO: output history
     echo "debug5";
@@ -205,10 +206,18 @@ if ($all_input_received) {
     <input type="text" id="y-text-input" name="y-input">
     <label for="y-text-input">label-for-Y</label>
     <p>R</p>
+
+    <!--
     <input type="button" id="r-equals-0.5-radio" name="r-input" value="0,5">
     <label for="r-equals-0.5-input">0,5</label><br>
     <input type="button" id="r-equals-1-radio" name="r-input" value="1">
     <label for="r-equals-1-input">1</label>
+    -->
+
+    <!-- fake R -->
+    <input type="text" id="r-text-input" name="r-input">
+    <label for="r-text-input">label-for-R</label>
+
 </form>
 
 <script src="js/script.js"></script>
