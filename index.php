@@ -133,10 +133,11 @@ if (session_status() === PHP_SESSION_NONE) {
     if ($all_input_received)
         echo $_GET["x-input"] . "<br>" . $_GET["y-input"] . "<br>" . $_GET["r-input"] . "</br>";
 
-echo "<br>" . "Recent history:";
+echo "<br>" . "Request history:";
 
 if (isset($_SESSION['request_history'])) {
     $user_request_history = unserialize($_SESSION['request_history']);
+    echo "<br>" . "Before Foreach";
     foreach ($user_request_history as $user_request) {
         echo "<br>" . "Request";
         // breaks here
