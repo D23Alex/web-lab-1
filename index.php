@@ -164,63 +164,36 @@ echo "<br>" . "Request history:";
 function construct_request_history(): array
 {
     $request_history = array();
-    echo "debug4.1";
-    echo " _SESSION['x_history'] has this amount of elements in it: " . count($_SESSION['x_history']);
     foreach ($_SESSION['x_history'] as $request_id=>$x) {
-        echo "debug4.2";
         $point = new Point($_SESSION['x_history'][$request_id], $_SESSION['y_history'][$request_id]);
-        echo "debug4.3";
         $r = $_SESSION['r_history'][$request_id];
-        echo "debug4.4";
         $user_request = new UserRequest($point, $r);
-        echo "debug4.5";
         $request_history[] = $user_request;
-        echo "debug4.6";
     }
-    echo "debug4.7";
     return $request_history;
 }
 
-echo "debug1";
 $request_history_exists = isset($_SESSION['x_history']) && isset($_SESSION['y_history']) &&
     isset($_SESSION['r_history']);
-echo "debug2";
 $request_history_valid = (count($_SESSION['x_history']) == count($_SESSION['y_history'])) &&
     (count($_SESSION['r_history']) == count($_SESSION['y_history']));
-echo "debug3";
 if ($request_history_exists && $request_history_valid) {
-    echo "debug4";
     $request_history = construct_request_history();
-    //TODO: output history
-    echo "debug5";
     foreach ($request_history as $user_request) {
-        echo "debug6";
         echo "<br>" . $user_request->getPoint()->getX();
-        echo "debug7";
         echo "<br>" . $user_request->getPoint()->getY();
         echo "<br>" . $user_request->getR();
     }
-    echo "debug7.5";
 }
-
-
-
-echo "aaa";
 
     function add_current_request_to_history()
     {
-        echo "debug9";
-        echo " _SESSION['x_history'] has this amount of elements in it: " . count($_SESSION['x_history']);
         $_SESSION['x_history'][] = $_GET["x-input"];
-        echo " _SESSION['x_history'] has this amount of elements in it: " . count($_SESSION['x_history']);
-        echo "debug10";
         $_SESSION['y_history'][] = $_GET["y-input"];
         $_SESSION['r_history'][] = $_GET["r-input"];
-        echo "debug11";
     }
 
 if ($all_input_received) {
-    echo "debug8";
     add_current_request_to_history();
 }
 
