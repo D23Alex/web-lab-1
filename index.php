@@ -158,6 +158,7 @@ function construct_request_history(): array
         $r = $_SESSION['r_history'][$request_id];
         echo "debug4.4";
         $user_request = new UserRequest($point, $r);
+        echo "<br> in construct request function" . $user_request->getPoint()->getX();
         echo "debug4.5";
         $request_history[] = $user_request;
         echo "debug4.6";
@@ -175,7 +176,6 @@ $request_history_valid = (count($_SESSION['x_history']) == count($_SESSION['y_hi
 echo "debug3";
 if ($request_history_exists && $request_history_valid) {
     echo "debug4";
-    //TODO: fix that this is somehow empty
     $request_history = construct_request_history();
     //TODO: output history
     echo "debug5";
