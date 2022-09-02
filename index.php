@@ -143,12 +143,19 @@ echo "<br>" . "Request history:";
 function construct_request_history(): array
 {
     $request_history = array();
+    echo "debug4.1";
     foreach ($_SESSION['x_history'] as $request_id=>$x) {
+        echo "debug4.2";
         $point = new Point($_SESSION['x_history'][$request_id], $_SESSION['y_history'][$request_id]);
+        echo "debug4.3";
         $r = $_SESSION['r_history'][$request_id];
+        echo "debug4.4";
         $user_request = new UserRequest($point, $r);
+        echo "debug4.5";
         $request_history[] = $user_request;
+        echo "debug4.6";
     }
+    echo "debug4.7";
     return $request_history;
 }
 
