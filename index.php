@@ -16,7 +16,6 @@
 <?php
 if (session_status() === PHP_SESSION_NONE) {
     session_start();
-    echo "session_STARTED";
     $history_exists = (isset($_SESSION['x_history'])) && (isset($_SESSION['y_history'])) && (isset($_SESSION['r_history']));
     if (!$history_exists) {
         $_SESSION['x_history'] = [];
