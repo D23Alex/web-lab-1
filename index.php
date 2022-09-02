@@ -217,6 +217,7 @@ if ($all_input_received) {
     <!-- fake R -->
     <input type="text" id="r-text-input" name="r-input">
     <label for="r-text-input">label-for-R</label>
+    <button type="submit">SUBMIT BUTTON</button>
 
 </form>
 
