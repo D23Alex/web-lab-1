@@ -133,18 +133,19 @@ if (session_status() === PHP_SESSION_NONE) {
     if ($all_input_received)
         echo $_GET["x-input"] . "<br>" . $_GET["y-input"] . "<br>" . $_GET["r-input"] . "</br>";
 
-echo "<p>Предыдущие запросы:</p>";
+echo "<br>" . "Recent history:";
 
 foreach ($_SESSION['request_history'] as $user_request) {
     echo "<br>" . "Request" . $user_request->getPoint()->getX() . $user_request->getPoint()->getY() . $user_request->getR();
 }
+echo "aaa";
 
     function add_previous_request_to_session()
     {
         $point = new Point($_GET["x-input"], $_GET["y-input"]);
         $request = new UserRequest($point, $_GET["r-input"]);
 
-        // if request history is empty then initialize it as an empty array before adding a new request
+        // if request history is empty initialize it as an empty array before adding a new request
         if (!isset($_SESSION['request_history']))
             $_SESSION['request_history'] = [];
 
