@@ -162,7 +162,7 @@ echo count($_SESSION['x_history']);
 echo count($_SESSION['y_history']);
 echo count($_SESSION['r_history']);
 echo "debug3";
-if ($request_history_exists && $request_history_valid) {
+if ($request_history_exists) { //&& $request_history_valid) {
     echo "debug4";
     $request_history = construct_request_history();
     //TODO: output history
