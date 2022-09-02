@@ -136,8 +136,8 @@ if (session_status() === PHP_SESSION_NONE) {
 echo "<br>" . "Recent history:";
 
 if (isset($_SESSION['request_history'])) {
-    foreach ($_SESSION['request_history'] as $user_request_serialized) {
-        $user_request = unserialize($user_request_serialized);
+    $user_request_history = unserialize($_SESSION['request_history']);
+    foreach ($user_request_history as $user_request) {
         echo "<br>" . "Request";
         // breaks here
         echo $user_request->getPoint()->getX();
@@ -154,11 +154,10 @@ echo "aaa";
         $point = new Point($_GET["x-input"], $_GET["y-input"]);
         $request = new UserRequest($point, $_GET["r-input"]);
 
-        // if request history is empty initialize it as an empty array before adding a new request
-        if (!isset($_SESSION['request_history']))
-            $_SESSION['request_history'] = [];
+        $request_history = isset($_SESSION['request_history']) ? unserialize(_SESSION['request_history']) : [];
+        $request_history[] = $request;
 
-        $_SESSION['request_history'][] = serialize($request);
+        $_SESSION['request_history'][] = serialize($request_history);
     }
 
 if ($all_input_received) {
