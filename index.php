@@ -137,7 +137,10 @@ echo "<br>" . "Recent history:";
 
 if (isset($_SESSION['request_history'])) {
     foreach ($_SESSION['request_history'] as $user_request) {
-        echo "<br>" . "Request" . $user_request->getPoint()->getX() . $user_request->getPoint()->getY() . $user_request->getR();
+        echo "<br>" . "Request";
+        echo $user_request->getPoint()->getX();
+        echo $user_request->getPoint()->getY();
+        echo $user_request->getR();
     }
 }
 
