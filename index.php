@@ -1,5 +1,7 @@
 <?php
-session_start();
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
 ?>
 <!DOCTYPE html>
 <html>
@@ -134,7 +136,7 @@ session_start();
 echo "<p>Предыдущие запросы:</p>";
 
 foreach ($_SESSION['request_history'] as $user_request) {
-    echo "<p>" . $user_request->getPoint()->getX() . $user_request->getPoint()->getY() . $user_request->getR() . "</p>";
+    echo "<p>" . "Request" . $user_request->getPoint()->getX() . $user_request->getPoint()->getY() . $user_request->getR() . "</p>";
 }
 
     function add_previous_request_to_session()
