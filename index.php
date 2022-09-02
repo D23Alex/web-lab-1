@@ -187,12 +187,16 @@ if ($request_history_exists && $request_history_valid) {
 
     function add_current_request_to_history()
     {
-        if (end($_SESSION['x_history']) != $_GET["x-input"])
+
+        $current_request_same_as_last = (end($_SESSION['x_history']) == $_GET["x-input"]) &&
+            (end($_SESSION['y_history']) == $_GET["y-input"]) &&
+            (end($_SESSION['r_history']) == $_GET["r-input"]);
+
+        if (!$current_request_same_as_last) {
             $_SESSION['x_history'][] = $_GET["x-input"];
-        if (end($_SESSION['y_history']) != $_GET["y-input"])
             $_SESSION['y_history'][] = $_GET["y-input"];
-        if (end($_SESSION['r_history']) != $_GET["r-input"])
             $_SESSION['r_history'][] = $_GET["r-input"];
+        }
     }
 
 if ($all_input_received) {
