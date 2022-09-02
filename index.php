@@ -136,9 +136,10 @@ if (session_status() === PHP_SESSION_NONE) {
 echo "<br>" . "Request history:";
 
 if (isset($_SESSION['request_history'])) {
-    $user_request_history = unserialize($_SESSION['request_history']);
+    $user_request_history = $_SESSION['request_history'];
     echo "<br>" . "Before Foreach";
-    foreach ($user_request_history as $user_request) {
+    foreach ($user_request_history as $user_request_serialized) {
+        $user_request = unserialize($user_request_serialized);
         echo "<br>" . "Request";
         // breaks here
         echo $user_request->getPoint()->getX();
@@ -155,10 +156,10 @@ echo "aaa";
         $point = new Point($_GET["x-input"], $_GET["y-input"]);
         $request = new UserRequest($point, $_GET["r-input"]);
 
-        $request_history = isset($_SESSION['request_history']) ? unserialize(_SESSION['request_history']) : [];
-        $request_history[] = $request;
+        $request_history = $_SESSION['request_history'] ?? [];
+        $request_history[] = serialize($request);
 
-        $_SESSION['request_history'][] = serialize($request_history);
+        $_SESSION['request_history'] = $request_history;
     }
 
 if ($all_input_received) {
