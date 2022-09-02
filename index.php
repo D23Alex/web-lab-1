@@ -143,8 +143,12 @@ foreach ($_SESSION['request_history'] as $user_request) {
     {
         $point = new Point($_GET["x-input"], $_GET["y-input"]);
         $request = new UserRequest($point, $_GET["r-input"]);
-        if (isset($_SESSION['request_history']))
-            $_SESSION['request_history'][] = $request;
+
+        // if request history is empty then initialize it as an empty array before adding a new request
+        if (!isset($_SESSION['request_history']))
+            $_SESSION['request_history'] = [];
+
+        $_SESSION['request_history'][] = $request;
     }
 
 if ($all_input_received)
