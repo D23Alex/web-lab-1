@@ -36,21 +36,35 @@ if (session_status() === PHP_SESSION_NONE) {
         private $x;
         private $y;
 
+
         public function __construct($x, $y)
         {
             $this->x = $x;
             $this->y = $y;
         }
 
-        public function get_x(): float
+
+        public function getX()
         {
             return $this->x;
         }
 
-        public function get_y(): float
+        public function setX($x)
+        {
+            $this->x = $x;
+        }
+
+        public function getY()
         {
             return $this->y;
         }
+
+        public function setY($y)
+        {
+            $this->y = $y;
+        }
+
+
     }
 
     class UserRequest
@@ -92,34 +106,35 @@ if (session_status() === PHP_SESSION_NONE) {
 
     function point_belongs_area(Point $point, float $r): bool
     {
-        if ($point->get_x() == 0)
+        if ($point->getX() == 0)
             return point_belongs_area_x_zero($point, $r);
-        if ($point->get_y() == 0)
+        if ($point->getY() == 0)
             return point_belongs_area_y_zero($point, $r);
-        if ($point->get_x() < 0 && $point->get_y() < 0)
+        if ($point->getX() < 0 && $point->getY() < 0)
             return point_belongs_to_area_bottom_left($point, $r);
-        if ($point->get_x() < 0 && $point->get_y() > 0)
+        if ($point->getX() < 0 && $point->getY() > 0)
             return point_belongs_to_area_top_left($point, $r);
-        if ($point->get_x() > 0 && $point->get_y() > 0)
+        if ($point->getX() > 0 && $point->getY() > 0)
             return point_belongs_to_area_top_right($point, $r);
-        if ($point->get_x() > 0 && $point->get_y() < 0)
+        if ($point->getX() > 0 && $point->getY() < 0)
             return point_belongs_to_area_bottom_right($point, $r);
         return false;
     }
 
+    //TODO: LOGIC MIGHT CONTAIN MISTAKES
     function point_belongs_to_area_top_right(Point $point, float $r): bool
     {
-        return $point->get_x() < ($r / 2) && $point->get_y() < $r;
+        return $point->getX() < ($r / 2) && $point->getY() < $r;
     }
 
     function point_belongs_to_area_bottom_right(Point $point, float $r): bool
     {
-        return $point->get_x() ** 2 + $point->get_y() ** 2 < $r ** 2;
+        return $point->getX() ** 2 + $point->getY() ** 2 < $r ** 2;
     }
 
     function point_belongs_to_area_top_left(Point $point, float $r): bool
     {
-        return $point->get_x() + $point->get_y() < $r;
+        return $point->getX() + $point->getY() < $r;
     }
 
     function point_belongs_to_area_bottom_left(Point $point, float $r): bool
@@ -129,12 +144,12 @@ if (session_status() === PHP_SESSION_NONE) {
 
     function point_belongs_area_y_zero(Point $point, float $r): bool
     {
-        return -1 * $r <= $point->get_x() && point->get_x() <= (r / 2);
+        return -1 * $r <= $point->getX() && point->getX() <= (r / 2);
     }
 
     function point_belongs_area_x_zero(Point $point, float $r): bool
     {
-        return -1 * ($r / 2) <= $point->get_y() && $point->get_y() < $r;
+        return -1 * ($r / 2) <= $point->getY() && $point->getY() < $r;
     }
 
     //TODO: use this when r button is fixed
@@ -158,7 +173,6 @@ function construct_request_history(): array
         $r = $_SESSION['r_history'][$request_id];
         echo "debug4.4";
         $user_request = new UserRequest($point, $r);
-        echo "<br> in construct request function" . $user_request->getPoint()->getX();
         echo "debug4.5";
         $request_history[] = $user_request;
         echo "debug4.6";
