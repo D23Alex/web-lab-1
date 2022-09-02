@@ -164,12 +164,14 @@ if ($request_history_exists && $request_history_valid) {
     $request_history = construct_request_history();
     //TODO: output history
     echo "debug5";
-    foreach ($request_history as $user_request)
+    foreach ($request_history as $user_request) {
         echo "debug6";
-    echo "<br>" . $user_request->getPoint()->getX();
-    echo "debug7";
-    echo "<br>" . $user_request->getPoint()->getY();
-    echo "<br>" . $user_request->getR();
+        echo "<br>" . $user_request->getPoint()->getX();
+        echo "debug7";
+        echo "<br>" . $user_request->getPoint()->getY();
+        echo "<br>" . $user_request->getR();
+    }
+    echo "debug7.5";
 }
 
 
