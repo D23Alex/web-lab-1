@@ -1,12 +1,3 @@
-<?php
-if (session_status() === PHP_SESSION_NONE) {
-    session_start();
-    $_SESSION['x_history'] = [];
-    $_SESSION['y_history'] = [];
-    $_SESSION['r_history'] = [];
-}
-
-?>
 <!DOCTYPE html>
 <html>
 
@@ -21,6 +12,18 @@ if (session_status() === PHP_SESSION_NONE) {
 </head>
 
 <body>
+
+<?php
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+    echo "session_STARTED";
+    $_SESSION['x_history'] = [];
+    $_SESSION['y_history'] = [];
+    $_SESSION['r_history'] = [];
+}
+
+?>
+
 <p>
     <?php
 
