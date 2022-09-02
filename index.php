@@ -1,11 +1,11 @@
 <?php
 if (session_status() === PHP_SESSION_NONE) {
     session_start();
+    $_SESSION['x_history'] = [];
+    $_SESSION['y_history'] = [];
+    $_SESSION['r_history'] = [];
 }
 
-$_SESSION['x_history'] = [];
-$_SESSION['y_history'] = [];
-$_SESSION['r_history'] = [];
 ?>
 <!DOCTYPE html>
 <html>
