@@ -191,11 +191,11 @@ echo "aaa";
     {
         echo "debug9";
         echo " _SESSION['x_history'] has this amount of elements in it: " . count($_SESSION['x_history']);
-        $_SESSION['x_history'][] = $_GET["x_input"];
+        $_SESSION['x_history'][] = $_GET["x-input"];
         echo " _SESSION['x_history'] has this amount of elements in it: " . count($_SESSION['x_history']);
         echo "debug10";
-        $_SESSION['y_history'][] = $_GET["y_input"];
-        $_SESSION['r_history'][] = $_GET["r_input"];
+        $_SESSION['y_history'][] = $_GET["y-input"];
+        $_SESSION['r_history'][] = $_GET["r-input"];
         echo "debug11";
     }
 
