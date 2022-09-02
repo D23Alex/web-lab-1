@@ -156,8 +156,11 @@ echo "debug1";
 $request_history_exists = isset($_SESSION['x_history']) && isset($_SESSION['y_history']) &&
     isset($_SESSION['r_history']);
 echo "debug2";
-$request_history_valid = count($_SESSION['x_history']) == count($_SESSION['y_history']) &&
-    count($_SESSION['r_history']) == count($_SESSION['y_history']);
+//$request_history_valid = (count($_SESSION['x_history']) == count($_SESSION['y_history'])) &&
+    //(count($_SESSION['r_history']) == count($_SESSION['y_history']));
+echo count($_SESSION['x_history']);
+echo count($_SESSION['y_history']);
+echo count($_SESSION['r_history']);
 echo "debug3";
 if ($request_history_exists && $request_history_valid) {
     echo "debug4";
