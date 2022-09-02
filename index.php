@@ -131,12 +131,12 @@ if (session_status() === PHP_SESSION_NONE) {
     // $all_input_received = isset($_GET["x-input"]) and isset($_GET["y-input"]) and isset($_GET["r-input"]);
     $all_input_received = isset($_GET["x-input"]) and isset($_GET["y-input"]);
     if ($all_input_received)
-        echo $_GET["x-input"] . "<br>" . $_GET["y-input"] . "<br>" . $_GET["r-input"] . "</p>";
+        echo $_GET["x-input"] . "<br>" . $_GET["y-input"] . "<br>" . $_GET["r-input"] . "</br>";
 
 echo "<p>Предыдущие запросы:</p>";
 
 foreach ($_SESSION['request_history'] as $user_request) {
-    echo "<p>" . "Request" . $user_request->getPoint()->getX() . $user_request->getPoint()->getY() . $user_request->getR() . "</p>";
+    echo "<br>" . "Request" . $user_request->getPoint()->getX() . $user_request->getPoint()->getY() . $user_request->getR();
 }
 
     function add_previous_request_to_session()
@@ -151,8 +151,10 @@ foreach ($_SESSION['request_history'] as $user_request) {
         $_SESSION['request_history'][] = $request;
     }
 
-if ($all_input_received)
+if ($all_input_received) {
     add_previous_request_to_session();
+}
+
 ?>
 <p>Hello, world! [from index.php]</p>
 <form method="get">
