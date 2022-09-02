@@ -136,8 +136,10 @@ if (session_status() === PHP_SESSION_NONE) {
 echo "<br>" . "Recent history:";
 
 if (isset($_SESSION['request_history'])) {
-    foreach ($_SESSION['request_history'] as $user_request) {
+    foreach ($_SESSION['request_history'] as $user_request_serialized) {
+        $user_request = unserialize($user_request_serialized);
         echo "<br>" . "Request";
+        // breaks here
         echo $user_request->getPoint()->getX();
         echo $user_request->getPoint()->getY();
         echo $user_request->getR();
@@ -156,7 +158,7 @@ echo "aaa";
         if (!isset($_SESSION['request_history']))
             $_SESSION['request_history'] = [];
 
-        $_SESSION['request_history'][] = $request;
+        $_SESSION['request_history'][] = serialize($request);
     }
 
 if ($all_input_received) {
