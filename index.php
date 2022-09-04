@@ -151,9 +151,7 @@ if (session_status() === PHP_SESSION_NONE) {
         return -1 * ($r / 2) <= $point->getY() && $point->getY() < $r;
     }
 
-    //TODO: use this when r button is fixed
-    // $all_input_received = isset($_GET["x-input"]) and isset($_GET["y-input"]) and isset($_GET["r-input"]);
-    $all_input_received = isset($_GET["x-input"]) && isset($_GET["y-input"]);
+    $all_input_received = isset($_GET["x-input"]) && isset($_GET["y-input"]) && isset($_GET["r-input"]);
     if ($all_input_received)
         echo $_GET["x-input"] . "<br>" . $_GET["y-input"] . "<br>" . $_GET["r-input"] . "</br>";
 
