@@ -1,0 +1,30 @@
+
+* {
+    overflow-x: hidden;
+    margin: 0px;
+    padding: 0px;
+    max-width: 100vw;
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    height: 10vh;
+    width: 100vw;
+    background-color: bisque;
+}
+
+main {
+    height: 90vh;
+    width: 100vw;
+    background-color: azure
+}
+
+footer {
+    height: 20vh;
+    width: 100vw;
+    background-color: cornflowerblue;;
+}
