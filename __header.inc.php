@@ -21,7 +21,7 @@
                 </div>
                 <hr>
                 <div class="main-h2-wrapper">
-                    <h2>Made By Aleksei Dormorezov from P32111 (1404) without any warranty but with <span>best wishes</span></h2>
+                    <h2>Made By Aleksei Dormorezov from P32111 (1404) without any warranty but with <span>best&nbsp;wishes</span></h2>
                 </div>
             </div>
         </div>

@@ -67,13 +67,20 @@ body {
                                 background-color: #FFBFBF;
                             }
 
+                    .header-wrapper > hr {
+                        width: 70vw;
+                        margin-left: 15vw;
+                    }
+
                     .main-h2-wrapper {
 
                     }
                         .main-h2-wrapper > h2 {
-                            font-size: 16px;
+                            font-size: 12px;
                             font-weight: 200;
                             text-align: center;
+                            padding-left: 15vw;
+                            padding-right: 15vw;
                         }
 
                             .main-h2-wrapper > h2 > span {
@@ -118,5 +125,9 @@ body {
         border-radius: 20px;
         height: 70vh;
         width: 40vw;
+    }
+
+    .main-h2-wrapper > h2 {
+        font-size: 16px;
     }
 }
