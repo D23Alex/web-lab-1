@@ -11,6 +11,10 @@
     flex-direction: column;
 }
 
+body {
+    background-color: coral;
+}
+
 header {
     height: 10vh;
     width: 100vw;
