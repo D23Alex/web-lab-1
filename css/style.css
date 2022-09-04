@@ -18,19 +18,6 @@
 
 
 
-@media (min-width: 767px) {
-    .main-content {
-        flex-direction: row;
-    }
-        .main-content > * {
-            border-radius: 20px;
-            background-color: darkgray;
-            height: 70vh;
-            width: 40vw;
-        }
-}
-
-
 
 * {
     overflow-x: hidden;
@@ -85,3 +72,16 @@ body {
                 height: 20vh;
                 width: 100vw;
             }
+
+
+@media (min-width: 767px) {
+    .main-content {
+        flex-direction: row;
+    }
+    .main-content > * {
+        border-radius: 20px;
+        background-color: darkgray;
+        height: 70vh;
+        width: 40vw;
+    }
+}
