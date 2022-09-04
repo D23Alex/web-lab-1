@@ -15,9 +15,11 @@
 <div class="wrapper">
     <header>
         <div class="header-content">
-            <h1 class="main-header-text">WOLFRAM BETA</h1>
-            <hr>
-            <h2>Made By Dormorezov Aleksei Sergeevich from P32111 (1404) without any warranty but with best wishes </h2>
+            <div class="header-wrapper">
+                <h1 class="main-header-text">WOLFRAM BETA</h1>
+                <hr>
+                <h2>Made By Dormorezov Aleksei Sergeevich from P32111 (1404) without any warranty but with best wishes </h2>
+            </div>
         </div>
     </header>
 

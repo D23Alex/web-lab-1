@@ -41,6 +41,8 @@
 
 body {
     background-color: coral;
+    font-family: Inter;
+    font-weight: 500;
 }
 
     .wrapper {
@@ -52,6 +54,7 @@ body {
             height: 10vh;
             width: 100vw;
             background-color: bisque;
+            justify-content: center;
         }
 
         main {
@@ -62,7 +65,7 @@ body {
             .main-content {
                 display: flex;
                 flex-direction: column;
-                justify-content: space-between;
+                justify-content: space-around;
             }
 
                 .main-content > * {
