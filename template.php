@@ -15,13 +15,20 @@
 <div class="wrapper">
     <header>
         <div class="header-content">
-            HEADER SOME TEXT
+            <h1 class="main-header-text">WOLFRAM BETA</h1>
+            <hr>
+            <h2>Made By Dormorezov Aleksei Sergeevich from P32111 (1404) without any warranty but with best wishes </h2>
         </div>
     </header>
 
     <main>
         <div class="main-content">
-            MAIN SOME TEXT
+            <div class="control">
+
+            </div>
+            <div class="history">
+
+            </div>
         </div>
     </main>
 

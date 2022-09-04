@@ -1,3 +1,36 @@
+@font-face {
+    font-family: "Inter";
+    src: url("/fonts/Inter-Regular.otf") format("otf");
+    font-weight: 500;
+}
+
+@font-face {
+    font-family: "Inter";
+    src: url("/fonts/Inter-ExtraLight.otf") format("otf");
+    font-weight: 200;
+}
+
+@font-face {
+    font-family: "Inter";
+    src: url("/fonts/Inter-Bold.otf") format("otf");
+    font-weight: bold;
+}
+
+
+
+@media (min-width: 767px) {
+    .main-content {
+        flex-direction: row;
+    }
+        .main-content > * {
+            border-radius: 20px;
+            background-color: darkgray;
+            height: 70vh;
+            width: 40vw;
+        }
+}
+
+
 
 * {
     overflow-x: hidden;
@@ -6,29 +39,41 @@
     max-width: 100vw;
 }
 
-.wrapper {
-    display: flex;
-    flex-direction: column;
-}
-
 body {
     background-color: coral;
 }
 
-header {
-    height: 10vh;
-    width: 100vw;
-    background-color: bisque;
-}
+    .wrapper {
+        display: flex;
+        flex-direction: column;
+    }
 
-main {
-    height: 90vh;
-    width: 100vw;
-    background-color: azure
-}
+        header {
+            height: 10vh;
+            width: 100vw;
+            background-color: bisque;
+        }
 
-footer {
-    height: 20vh;
-    width: 100vw;
-    background-color: cornflowerblue;;
-}
+        main {
+            height: 90vh;
+            width: 100vw;
+            background-color: azure
+        }
+            .main-content {
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+            }
+
+                .main-content > * {
+                    border-radius: 20px;
+                    background-color: darkgray;
+                    height: 40vh;
+                    width: 90vw;
+                }
+
+        footer {
+            height: 20vh;
+            width: 100vw;
+            background-color: cornflowerblue;;
+        }
