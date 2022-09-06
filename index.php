@@ -230,7 +230,7 @@ function add_response_to_history(PointBelongsAreaResponse $response)
         $_SESSION['x_history'][] = $response->getUserRequest()->getPoint()->getX();
         $_SESSION['y_history'][] = $response->getUserRequest()->getPoint()->getY();
         $_SESSION['r_history'][] = $response->getUserRequest()->getR();
-        $_SESSION['result-history'][] = $response->point_belongs_area();
+        $_SESSION['response_history'][] = $response->point_belongs_area();
     }
 }
 
