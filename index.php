@@ -114,10 +114,13 @@ function user_request_valid(): bool
 
 function render_history_content()
 {
+    echo 'start rendering history';
     $history_exists = (isset($_SESSION['x_history'])) && (isset($_SESSION['y_history'])) && (isset($_SESSION['r_history']));
     if ($history_exists) {
+        echo 'case history exists';
         // here in request history we gotta use objects of response class and not request class, because response contains result which we gonna need here
         $response_history = construct_response_history();
+        echo 'history constructed';
         foreach ($response_history as $current_response_index=>$current_response) {
             echo '<br>' . $current_response->point_belongs_area();
         }
