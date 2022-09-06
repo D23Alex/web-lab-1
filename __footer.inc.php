@@ -8,3 +8,5 @@
 </body>
 
 </html>
+
+<script src="js/eventListeners.js"></script>

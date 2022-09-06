@@ -1,5 +1,5 @@
 function buttonPressed(e) {
-
+    document.forms["main-form"]["r-input"].value = e.target.value;
 }
 
 
