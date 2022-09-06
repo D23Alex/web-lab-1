@@ -114,7 +114,9 @@ function render_history_content()
 {
     $history_exists = (isset($_SESSION['x_history'])) && (isset($_SESSION['y_history'])) && (isset($_SESSION['r_history']));
     if ($history_exists) {
-        echo 'TODO: output history';
+        // here in request history we gotta use objects of response class and not request class, because response contains result which we gonna need here
+        $request_history = construct_request_history();
+
     } else {
         echo 'History is empty';
     }
