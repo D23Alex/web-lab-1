@@ -124,7 +124,7 @@ function render_history_content()
         foreach ($response_history as $current_response_index=>$current_response) {
             echo '<br>' . 'x: ' . $current_response->getUserRequest()->getPoint()->getX() .
                 ' y: ' . $current_response->getUserRequest()->getPoint()->getY() .
-                ' r: ' . $current_response->getUserRequest()->getPoint()->getX() .
+                ' r: ' . $current_response->getUserRequest()->getR() .
                 ' result : ' . $current_response->point_belongs_area();
         }
 
