@@ -114,15 +114,18 @@ function user_request_valid(): bool
 
 function render_history_content()
 {
-    echo 'start rendering history';
+    echo ' start rendering history ';
     $history_exists = (isset($_SESSION['x_history'])) && (isset($_SESSION['y_history'])) && (isset($_SESSION['r_history']));
     if ($history_exists) {
-        echo 'case history exists';
+        echo ' case history exists ';
         // here in request history we gotta use objects of response class and not request class, because response contains result which we gonna need here
         $response_history = construct_response_history();
-        echo 'history constructed';
+        echo ' history constructed ';
         foreach ($response_history as $current_response_index=>$current_response) {
-            echo '<br>' . $current_response->point_belongs_area();
+            echo '<br>' . 'x: ' . $current_response->getUserRequest()->getPoint()->getX() .
+                ' y: ' . $current_response->getUserRequest()->getPoint()->getY() .
+                ' r: ' . $current_response->getUserRequest()->getPoint()->getX() .
+                ' result : ' . $current_response->point_belongs_area();
         }
 
     } else {
@@ -137,7 +140,7 @@ function render_main_form()
 
 function render_system_of_axis()
 {
-    echo '<div class="system-of-axis">//TODO: this</div>';
+    echo '<div class="system-of-axis">//TODO: render system of axis</div>';
 }
 
 function render_after_history_content_till_footer()
