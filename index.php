@@ -87,7 +87,7 @@ function render_point_belongs_area_response(UserRequest $user_request, PointBelo
         <div class="result-table-cell">x: ' . $x . '</div>
         <div class="result-table-cell">y: ' . $y . '</div>
         <div class="result-table-cell">R: ' . $r . '</div>
-        <div class="result-table-cell"><div class="' . $result_classname . '></div></div>
+        <div class="result-table-cell"><div class="' . $result_classname . '></div>
     </div>
 </div>';
 }
