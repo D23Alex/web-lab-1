@@ -14,7 +14,7 @@
     <input class="r-button" type="button" id="r-equals-1" value="1">
     <label for="r-equals-1-input">1</label>
     <input type="text" id="real-r" name="r-input" style="display: none">
-
+    <button type="submit">SUBMIT BUTTON</button>
 
 
     <!-- fake R -->
