@@ -1,5 +1,6 @@
 function buttonPressed(e) {
-    document.forms["main-form"]["r-input"].value = e.target.value;
+    let realRField = document.getElementById('real-r');
+    realRField.value = e.target.value;
 }
 
 
