@@ -76,11 +76,19 @@ class PointBelongsAreaResponse {
 
     private $point_belongs_area;
 
-    public function __construct($point_belongs_area)
+    private $user_request;
+
+    public function __construct($point_belongs_area, $user_request)
     {
         $this->point_belongs_area = $point_belongs_area;
+        $this->user_request = $user_request;
     }
 
+
+    public function getUserRequest()
+    {
+        return $this->user_request;
+    }
 
     public function point_belongs_area(): bool
     {

@@ -50,6 +50,8 @@ function render_point_response()
         if (user_request_valid()) {
             echo 'case user request valid';
             $point_belongs_area_response = generate_point_belongs_area_response($user_request);
+            echo 'add the response to request history';
+            add_response_to_history($point_belongs_area_response);
             echo 'start rendering response';
             render_point_belongs_area_response($user_request, $point_belongs_area_response);
         }
@@ -99,9 +101,9 @@ function render_point_belongs_area_response(UserRequest $user_request, PointBelo
 function generate_point_belongs_area_response(UserRequest $userRequest): PointBelongsAreaResponse
 {
     if (point_belongs_area($userRequest->getPoint(), $userRequest->getR())) {
-        return new PointBelongsAreaResponse(true);
+        return new PointBelongsAreaResponse(true, $userRequest);
     }
-    return new PointBelongsAreaResponse(false);
+    return new PointBelongsAreaResponse(false, $userRequest);
 }
 
 function user_request_valid(): bool
@@ -115,7 +117,10 @@ function render_history_content()
     $history_exists = (isset($_SESSION['x_history'])) && (isset($_SESSION['y_history'])) && (isset($_SESSION['r_history']));
     if ($history_exists) {
         // here in request history we gotta use objects of response class and not request class, because response contains result which we gonna need here
-        $request_history = construct_request_history();
+        $response_history = construct_response_history();
+        foreach ($response_history as $current_response_index=>$current_response) {
+            echo '<br>' . $current_response->point_belongs_area();
+        }
 
     } else {
         echo 'History is empty';
@@ -191,7 +196,7 @@ function point_belongs_to_area_bottom_left(Point $point, float $r): bool
 
 function point_belongs_area_y_zero(Point $point, float $r): bool
 {
-    return -1 * $r <= $point->getX() && point->getX() <= (r / 2);
+    return -1 * $r <= $point->getX() && $point->getX() <= (r / 2);
 }
 
 function point_belongs_area_x_zero(Point $point, float $r): bool
@@ -199,29 +204,30 @@ function point_belongs_area_x_zero(Point $point, float $r): bool
     return -1 * ($r / 2) <= $point->getY() && $point->getY() < $r;
 }
 
-function construct_request_history(): array
+function construct_response_history(): array
 {
-    $request_history = array();
+    $response_history = array();
     foreach ($_SESSION['x_history'] as $request_id=>$x) {
         $point = new Point($_SESSION['x_history'][$request_id], $_SESSION['y_history'][$request_id]);
         $r = $_SESSION['r_history'][$request_id];
         $user_request = new UserRequest($point, $r);
-        $request_history[] = $user_request;
+        $response = new PointBelongsAreaResponse($_SESSION['response_history'][$request_id], $user_request);
+        $response_history[] = $response;
     }
-    return $request_history;
+    return $response_history;
 }
 
-function add_current_request_to_history()
+function add_response_to_history(PointBelongsAreaResponse $response)
 {
-
-    $current_request_same_as_last = (end($_SESSION['x_history']) == $_GET["x-input"]) &&
-        (end($_SESSION['y_history']) == $_GET["y-input"]) &&
-        (end($_SESSION['r_history']) == $_GET["r-input"]);
+    $current_request_same_as_last = (end($_SESSION['x_history']) == $response->getUserRequest()->getPoint()->getX()) &&
+        (end($_SESSION['y_history']) == $response->getUserRequest()->getPoint()->getY()) &&
+        (end($_SESSION['r_history']) == $response->getUserRequest()->getR());
 
     if (!$current_request_same_as_last) {
-        $_SESSION['x_history'][] = $_GET["x-input"];
-        $_SESSION['y_history'][] = $_GET["y-input"];
-        $_SESSION['r_history'][] = $_GET["r-input"];
+        $_SESSION['x_history'][] = $response->getUserRequest()->getPoint()->getX();
+        $_SESSION['y_history'][] = $response->getUserRequest()->getPoint()->getY();
+        $_SESSION['r_history'][] = $response->getUserRequest()->getR();
+        $_SESSION['result-history'][] = $response->point_belongs_area();
     }
 }
 
