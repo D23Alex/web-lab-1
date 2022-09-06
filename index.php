@@ -41,11 +41,14 @@ function render_main_content()
 // if there was no request from user to check if the point is within the given area, the behavior of this function is to render nothing
 function render_point_response()
 {
-    $all_input_received = isset($_GET["x-input"]) && isset($_GET["y-input"]) && isset($_GET["r-input"]);
+    $all_input_received = (isset($_GET["x-input"]) && isset($_GET["y-input"]) && isset($_GET["r-input"]));
+    echo 'all input received: ' . $all_input_received;
     if ($all_input_received) {
         $user_request = new UserRequest(new Point($_GET["x-input"], $_GET["y-input"]), $_GET["r-input"]);
         if (user_request_valid()) {
+            echo 'case user request valid';
             $point_belongs_area_response = generate_point_belongs_area_response($user_request);
+            echo 'start rendering response';
             render_point_belongs_area_response($user_request, $point_belongs_area_response);
         }
         else {
@@ -76,7 +79,7 @@ function render_point_belongs_area_response(UserRequest $user_request, PointBelo
     } else {
         $result_classname = "no-image";
     }
-
+    echo 'start echoing point-belongs-area-response div';
     echo '<div class="point-belongs-area-response">
     <div class="valid-input-response">
         <div class="result-table-cell">x: ' . $x . '</div>
