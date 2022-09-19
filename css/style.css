@@ -135,6 +135,11 @@ body {
     border-radius: 20px;
     padding: 10px;
 }
+
+.system-of-axis > img {
+    height: 30vw;
+}
+
                 .main-content > * {
                     border-radius: 20px;
                     height: 40vh;
