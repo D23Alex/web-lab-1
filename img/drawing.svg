@@ -206,15 +206,15 @@
        style="white-space:pre;shape-inside:url(#rect5799);display:inline;fill:#5e5e5e;fill-opacity:1"><tspan
          x="367.78516"
          y="194.58398"
-         id="tspan7476">Y</tspan></text>
+         id="tspan7660">Y</tspan></text>
     <text
        xml:space="preserve"
-       transform="matrix(2.1523637,0,0,2.1523637,-508.76575,-273.45213)"
+       transform="matrix(2.1523637,0,0,2.1523637,-515.59294,-271.44845)"
        id="text5797-9"
        style="white-space:pre;shape-inside:url(#rect5799-0);display:inline;fill:#5e5e5e;fill-opacity:1"><tspan
          x="367.78516"
          y="194.58398"
-         id="tspan7478">X</tspan></text>
+         id="tspan7662">X</tspan></text>
     <text
        xml:space="preserve"
        transform="matrix(2.1523637,0,0,2.1523637,-548.12717,-273.22535)"
@@ -222,7 +222,7 @@
        style="white-space:pre;shape-inside:url(#rect5799-3);display:inline;fill:#5e5e5e;fill-opacity:1"><tspan
          x="367.78516"
          y="194.58398"
-         id="tspan7480">R</tspan></text>
+         id="tspan7664">R</tspan></text>
     <text
        xml:space="preserve"
        transform="matrix(2.1523637,0,0,2.1523637,-625.14689,-355.3994)"
@@ -230,7 +230,7 @@
        style="white-space:pre;shape-inside:url(#rect5799-3-23);display:inline;fill:#5e5e5e;fill-opacity:1"><tspan
          x="367.78516"
          y="194.58398"
-         id="tspan7482">R</tspan></text>
+         id="tspan7666">R</tspan></text>
     <text
        xml:space="preserve"
        transform="matrix(2.1523637,0,0,2.1523637,-626.86811,-154.76193)"
@@ -238,7 +238,7 @@
        style="white-space:pre;shape-inside:url(#rect5799-3-5);display:inline;fill:#5e5e5e;fill-opacity:1"><tspan
          x="367.78516"
          y="194.58398"
-         id="tspan7484">R</tspan></text>
+         id="tspan7668">R</tspan></text>
     <rect
        style="white-space:pre;shape-inside:url(#rect5799);fill:#5e5e5e;fill-opacity:1;stroke-width:0.476651"
        id="rect2838-5-1"
@@ -255,7 +255,7 @@
        style="white-space:pre;shape-inside:url(#rect5799-3-0);display:inline;fill:#5e5e5e;fill-opacity:1"><tspan
          x="367.78516"
          y="194.58398"
-         id="tspan7486">R/2</tspan></text>
+         id="tspan7670">R/2</tspan></text>
     <text
        xml:space="preserve"
        transform="matrix(1.1749991,0,0,1.1749991,-265.00852,-111.68984)"
@@ -263,7 +263,7 @@
        style="white-space:pre;shape-inside:url(#rect5799-3-0-22);display:inline;fill:#5e5e5e;fill-opacity:1"><tspan
          x="367.78516"
          y="194.58398"
-         id="tspan7488">R/2</tspan></text>
+         id="tspan7672">R/2</tspan></text>
     <text
        xml:space="preserve"
        transform="matrix(1.1749991,0,0,1.1749991,-266.5012,-14.566966)"
@@ -271,7 +271,7 @@
        style="white-space:pre;shape-inside:url(#rect5799-3-0-9);display:inline;fill:#5e5e5e;fill-opacity:1"><tspan
          x="367.78516"
          y="194.58398"
-         id="tspan7490">R/2</tspan></text>
+         id="tspan7674">R/2</tspan></text>
     <text
        xml:space="preserve"
        transform="matrix(1.1749991,0,0,1.1749991,-340.32626,-84.69968)"
@@ -279,7 +279,7 @@
        style="white-space:pre;shape-inside:url(#rect5799-3-0-3);display:inline;fill:#5e5e5e;fill-opacity:1"><tspan
          x="367.78516"
          y="194.58398"
-         id="tspan7492">R/2</tspan></text>
+         id="tspan7676">R/2</tspan></text>
     <text
        xml:space="preserve"
        transform="matrix(2.1523637,0,0,2.1523637,-750.34371,-271.91747)"
@@ -287,6 +287,6 @@
        style="white-space:pre;shape-inside:url(#rect5799-3-2);display:inline;fill:#5e5e5e;fill-opacity:1"><tspan
          x="367.78516"
          y="194.58398"
-         id="tspan7494">R</tspan></text>
+         id="tspan7678">R</tspan></text>
   </g>
 </svg>
