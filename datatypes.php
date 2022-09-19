@@ -9,8 +9,13 @@ class Point
 
     public function __construct($x, $y)
     {
+        if ($y == "0") {
+            $this->y = 0;
+        }
+        else {
+            $this->y = $y;
+        }
         $this->x = $x;
-        $this->y = $y;
     }
 
 

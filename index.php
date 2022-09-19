@@ -114,13 +114,13 @@ function user_request_valid(): bool
 
 function render_history_content()
 {
-    echo ' start rendering history ';
     $history_exists = (isset($_SESSION['x_history'])) && (isset($_SESSION['y_history'])) && (isset($_SESSION['r_history']));
     if ($history_exists) {
-        echo ' case history exists ';
         // here in request history we gotta use objects of response class and not request class, because response contains result which we gonna need here
         $response_history = construct_response_history();
-        echo ' history constructed ';
+        if (sizeof($response_history) < 1) {
+            echo 'History is empty';
+        }
         foreach ($response_history as $current_response_index=>$current_response) {
             echo '<br>' . 'x: ' . $current_response->getUserRequest()->getPoint()->getX() .
                 ' y: ' . $current_response->getUserRequest()->getPoint()->getY() .
@@ -179,7 +179,7 @@ function point_belongs_area(Point $point, float $r): bool
     return false;
 }
 
-//TODO: LOGIC MIGHT CONTAIN MISTAKES
+//TODO: LOGIC MIGHT CONTAIN MISTAKES (this todo gonna be here for a while)
 function point_belongs_to_area_top_right(Point $point, float $r): bool
 {
     return $point->getX() < ($r / 2) && $point->getY() < $r;
@@ -202,7 +202,7 @@ function point_belongs_to_area_bottom_left(Point $point, float $r): bool
 
 function point_belongs_area_y_zero(Point $point, float $r): bool
 {
-    return -1 * $r <= $point->getX() && $point->getX() <= (r / 2);
+    return -1 * $r <= $point->getX() && $point->getX() <= ($r / 2);
 }
 
 function point_belongs_area_x_zero(Point $point, float $r): bool

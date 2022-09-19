@@ -52,6 +52,10 @@ function validateYInput() {
         return new ValidationResult(false, "fill in the value of y")
     }
 
+    if (yInput.value.length > 10) {
+        return new ValidationResult(false, "too many characters in this input")
+    }
+
     if (yInput.value.charAt(0) === ".") {
         return new ValidationResult(false, "this field cannot start with a period");
     }
