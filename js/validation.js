@@ -48,11 +48,11 @@ function validateYInput() {
     var maxYValue = 3;
 
     var yInput = document.forms["main-form"]["y-input"];
-    if (yInput.value == null) {
+    if (yInput.value == null || yInput.value === "") {
         return new ValidationResult(false, "fill in the value of y")
     }
 
-    if (yInput.value.charAt(0) == ".") {
+    if (yInput.value.charAt(0) === ".") {
         return new ValidationResult(false, "this field cannot start with a period");
     }
 
