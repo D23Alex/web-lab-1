@@ -1,4 +1,4 @@
-<form name="main-form" method="get" onsubmit="submitMainForm()" id="main-form">
+<form name="main-form" method="get" id="main-form">
     <div class="user-input" id="x-input">
         <div class="inputs">
             <p>X</p>
@@ -39,7 +39,7 @@
         </div>
 
     </div>
-    <button type="submit">SUBMIT BUTTON</button>
+    <button id="submit-button">SUBMIT BUTTON</button>
 
 
     <!-- fake R -->
