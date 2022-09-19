@@ -1,3 +1,5 @@
+const VALIDATION_MESSAGES_PREFIX = "Invalid input - ";
+
 class ValidationResult {
     _isValid;
     _validationMessage;
@@ -94,7 +96,7 @@ function constructValidationDivs(xValidationResult, yValidationResult, rValidati
         xValidationDiv.classList.remove("valid")
         xValidationDiv.classList.add("invalid")
     }
-    xValidationDiv.title = xValidationResult._validationMessage;
+    xValidationDiv.title = VALIDATION_MESSAGES_PREFIX +  xValidationResult._validationMessage;
 
     if (yValidationResult._isValid) {
         yValidationDiv.classList.remove("invalid")
@@ -103,7 +105,7 @@ function constructValidationDivs(xValidationResult, yValidationResult, rValidati
         yValidationDiv.classList.remove("valid")
         yValidationDiv.classList.add("invalid")
     }
-    yValidationDiv.title = yValidationResult._validationMessage;
+    yValidationDiv.title = VALIDATION_MESSAGES_PREFIX + yValidationResult._validationMessage;
 
     if (rValidationResult._isValid) {
         rValidationDiv.classList.remove("invalid")
@@ -112,5 +114,5 @@ function constructValidationDivs(xValidationResult, yValidationResult, rValidati
         rValidationDiv.classList.remove("valid")
         rValidationDiv.classList.add("invalid")
     }
-    rValidationDiv.title = rValidationResult._validationMessage;
+    rValidationDiv.title = VALIDATION_MESSAGES_PREFIX + rValidationResult._validationMessage;
 }

@@ -102,8 +102,8 @@ body {
 
 /** random stuff here **/
 .r-button-pressed {
-    border-width: 5px;
-    border-color: #FFBFBF;
+    border: 2px solid #FFBFBF;
+    background-color: #5E5E5E;
     border-radius: 5px;
 }
 
@@ -116,7 +116,7 @@ body {
     margin-left: 20px;
     margin-top: 20px;
     margin-bottom: 20px;
-    border: 3px solid #FFBFBF;
+    border: 2px solid #FFBFBF;
 }
 .valid {
     background-color: #FFBFBF;
