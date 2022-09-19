@@ -37,7 +37,7 @@ function validateMainForm() {
 
 function validateXInput() {
     var x = document.forms["main-form"]["x-input"].value;
-    if (x == null) {
+    if (x == null || x === "") {
         return new ValidationResult(false, "fill in the value of x")
     }
     return new ValidationResult(true, "OK")
@@ -72,7 +72,7 @@ function validateYInput() {
 
 function validateRInput() {
     var r = document.forms["main-form"]["r-input"].value;
-    if (r == null) {
+    if (r == null | r === "") {
         return new ValidationResult(false, "fill in the value of r")
     }
     return new ValidationResult(true, "OK")
