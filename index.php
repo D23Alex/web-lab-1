@@ -44,15 +44,11 @@ function render_main_content()
 function render_point_response()
 {
     $all_input_received = (isset($_GET["x-input"]) && isset($_GET["y-input"]) && isset($_GET["r-input"]));
-    echo 'all input received: ' . $all_input_received;
     if ($all_input_received) {
         $user_request = new UserRequest(new Point($_GET["x-input"], $_GET["y-input"]), $_GET["r-input"]);
         if (user_request_valid()) {
-            echo 'case user request valid';
             $point_belongs_area_response = generate_point_belongs_area_response($user_request);
-            echo 'add the response to request history';
             add_response_to_history($point_belongs_area_response);
-            echo 'start rendering response';
             render_point_belongs_area_response($user_request, $point_belongs_area_response);
         }
         else {

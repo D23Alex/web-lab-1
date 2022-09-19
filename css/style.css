@@ -149,8 +149,14 @@ body {
     padding-right: 15px;
 }
 
+.system-of-axis {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
 .system-of-axis > img {
-    width: 18vw;
+    width: 14vw;
 }
 
                 .main-content > * {
