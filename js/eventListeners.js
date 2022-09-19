@@ -16,3 +16,10 @@ function rButtonPressed(e) {
 for (let currentRButton of rButtons) {
     currentRButton.addEventListener('click', rButtonPressed)
 }
+
+function submitMainForm() {
+    let result = validateMainForm();
+    if (result === true) {
+        document.getElementById("main-form").submit();
+    }
+}

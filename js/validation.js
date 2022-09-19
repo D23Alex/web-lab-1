@@ -32,6 +32,7 @@ function validateMainForm() {
     if (xValidationResult._isValid == false || yValidationResult._isValid == false || rValidationResult._isValid == false) {
         return false
     }
+    return true
 }
 
 function validateXInput() {
