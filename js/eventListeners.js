@@ -20,6 +20,6 @@ for (let currentRButton of rButtons) {
 function submitMainForm() {
     let result = validateMainForm();
     if (result === true) {
-        document.getElementById("main-form").submit();
+        //document.getElementById("main-form").submit();
     }
 }
