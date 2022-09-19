@@ -100,9 +100,22 @@ body {
                 justify-content: space-around;
             }
 
+            /** random stuff here **/
             .r-button-pressed {
-                border-width: 10px;
+                border-width: 5px;
                 border-color: #FFBFBF;
+                border-radius: 5px;
+            }
+
+            .validation-result {
+                width: 50px;
+                height: 50px;
+            }
+            .valid {
+                background-color: green;
+            }
+            .invalid {
+                background-color: red;
             }
 
                 .main-content > * {
