@@ -140,7 +140,7 @@ function render_main_form()
 
 function render_system_of_axis()
 {
-    echo '<div class="system-of-axis">//TODO: render system of axis</div>';
+    echo '<div class="system-of-axis"><img src="img/drawing.svg"></div>';
 }
 
 function render_after_history_content_till_footer()
