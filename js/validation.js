@@ -57,7 +57,7 @@ function validateYInput() {
     }
 
     var acceptableValues = [".", "0", "1", "2", "3", "4", "5", "6", "7", "8", "9"]
-    for (var i = 0; i < yInput.value; i++) {
+    for (var i = 0; i < yInput.value.length; i++) {
         if (!acceptableValues.includes(yInput.value.charAt(i))) {
             return new ValidationResult(false, "this field must be a an integer or a float, '.' separator must be used");
         }
