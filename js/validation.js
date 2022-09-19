@@ -90,18 +90,27 @@ function constructValidationDivs(xValidationResult, yValidationResult, rValidati
     if (xValidationResult._isValid) {
         xValidationDiv.classList.remove("invalid")
         xValidationDiv.classList.add("valid")
+    } else {
+        xValidationDiv.classList.remove("valid")
+        xValidationDiv.classList.add("invalid")
     }
     xValidationDiv.title = xValidationResult._validationMessage;
 
     if (yValidationResult._isValid) {
         yValidationDiv.classList.remove("invalid")
         yValidationDiv.classList.add("valid")
+    } else {
+        yValidationDiv.classList.remove("valid")
+        yValidationDiv.classList.add("invalid")
     }
     yValidationDiv.title = yValidationResult._validationMessage;
 
     if (rValidationResult._isValid) {
         rValidationDiv.classList.remove("invalid")
         rValidationDiv.classList.add("valid")
+    } else {
+        rValidationDiv.classList.remove("valid")
+        rValidationDiv.classList.add("invalid")
     }
     rValidationDiv.title = rValidationResult._validationMessage;
 }
