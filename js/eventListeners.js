@@ -14,6 +14,7 @@ function rButtonPressed(e) {
 }
 
 function submitButtonPressed(e) {
+    e.preventDefault();
     let result = validateMainForm();
     if (result === true) {
         document.getElementById("main-form").submit();

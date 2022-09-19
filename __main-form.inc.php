@@ -1,4 +1,4 @@
-<form name="main-form" method="get" id="main-form">
+<form name="main-form" method="get" id="main-form" onsubmit="submitButtonPressed()">
     <div class="user-input" id="x-input">
         <div class="inputs">
             <p>X</p>
