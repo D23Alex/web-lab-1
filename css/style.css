@@ -100,24 +100,41 @@ body {
                 justify-content: space-around;
             }
 
-            /** random stuff here **/
-            .r-button-pressed {
-                border-width: 5px;
-                border-color: #FFBFBF;
-                border-radius: 5px;
-            }
+/** random stuff here **/
+.r-button-pressed {
+    border-width: 5px;
+    border-color: #FFBFBF;
+    border-radius: 5px;
+}
 
-            .validation-result {
-                width: 50px;
-                height: 50px;
-            }
-            .valid {
-                background-color: green;
-            }
-            .invalid {
-                background-color: red;
-            }
+.validation-result {
+    border-radius: 20px;
+    text-align: center;
+    align-self: center;
+    height: 50px;
+    width: 50px;
+    margin-left: 20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border: 3px solid #FFBFBF;
+}
+.valid {
+    background-color: #FFBFBF;
+}
+.invalid {
 
+}
+
+.user-input {
+    display: flex;
+}
+.inputs {
+    margin: 20px;
+    min-width: 25vw;
+    border: 2px solid #ABABAB;
+    border-radius: 20px;
+    padding: 10px;
+}
                 .main-content > * {
                     border-radius: 20px;
                     height: 40vh;
