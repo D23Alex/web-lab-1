@@ -136,8 +136,21 @@ body {
     padding: 10px;
 }
 
+.inputs {
+    align-items: center;
+    display: flex;
+}
+
+.inputs > * {
+    padding: 5px;
+}
+
+.inputs > p {
+    padding-right: 15px;
+}
+
 .system-of-axis > img {
-    height: 30vw;
+    width: 18vw;
 }
 
                 .main-content > * {
