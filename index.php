@@ -108,6 +108,7 @@ function render_history_content()
         if (sizeof($response_history) < 1) {
             echo '<div><request>History is empty</request></div>';
         }
+        date_default_timezone_set("Europe/Moscow");
         foreach ($response_history as $current_response_index=>$current_response) {
             echo '<div class="request">' . '<div>' . 'time: ' . date('h:i:s') . '</div>' . '<div>x: ' . $current_response->getUserRequest()->getPoint()->getX() .
                 '</div><div>y: ' . $current_response->getUserRequest()->getPoint()->getY() .
