@@ -62,8 +62,8 @@ function render_point_response()
 function render_invalid_input_warning()
 {
     echo '<div class="response">
-    <div class="invalid-input-varning">
-        INVALID INPUT BLOCK
+    <div class="invalid-input-warning">
+        Invalid input. Try again.
     </div>
 </div>';
 
@@ -94,7 +94,18 @@ function generate_point_belongs_area_response(UserRequest $userRequest): PointBe
 
 function user_request_valid(): bool
 {
-    //TODO:
+    $x = $_GET["x-input"];
+    $y = $_GET["y-input"];
+    $r = $_GET["r-input"];
+
+    if (!is_numeric($x) || !is_numeric($y) || ! is_numeric($r)) {
+        return false;
+    }
+
+    if ($y < -3 || $y > 3 || $r <0 || $r > 3 || $x < -3 || $x > 3) {
+        return false;
+    }
+
     return true;
 }
 

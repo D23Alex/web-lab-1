@@ -79,6 +79,8 @@ class UserRequest
 
 class PointBelongsAreaResponse {
 
+    private $data_valid;
+
     private $point_belongs_area;
 
     private $user_request;
@@ -87,6 +89,7 @@ class PointBelongsAreaResponse {
     {
         $this->point_belongs_area = $point_belongs_area;
         $this->user_request = $user_request;
+
     }
 
 
@@ -99,4 +102,22 @@ class PointBelongsAreaResponse {
     {
         return $this->point_belongs_area;
     }
+
+    /**
+     * @return mixed
+     */
+    public function getPointBelongsArea()
+    {
+        return $this->point_belongs_area;
+    }
+
+    /**
+     * @param mixed $point_belongs_area
+     */
+    public function setPointBelongsArea($point_belongs_area)
+    {
+        $this->point_belongs_area = $point_belongs_area;
+    }
+
+
 }
