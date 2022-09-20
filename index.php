@@ -168,7 +168,6 @@ function point_belongs_area(Point $point, float $r): bool
     return false;
 }
 
-//TODO: LOGIC MIGHT CONTAIN MISTAKES (this todo gonna be here for a while)
 function point_belongs_to_area_top_right(Point $point, float $r): bool
 {
     return $point->getX() < ($r / 2) && $point->getY() < $r;
@@ -181,7 +180,7 @@ function point_belongs_to_area_bottom_right(Point $point, float $r): bool
 
 function point_belongs_to_area_top_left(Point $point, float $r): bool
 {
-    return $point->getX() + $point->getY() < $r;
+    return abs($point->getX()) + abs($point->getY()) < abs($r);
 }
 
 function point_belongs_to_area_bottom_left(Point $point, float $r): bool
