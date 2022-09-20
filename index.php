@@ -106,6 +106,10 @@ function user_request_valid(): bool
         return false;
     }
 
+    if (strlen($x) > 10 || strlen($y) > 10 || strlen($r) > 10) {
+        return false;
+    }
+
     return true;
 }
 
