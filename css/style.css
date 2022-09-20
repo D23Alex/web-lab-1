@@ -180,6 +180,11 @@ body {
     justify-content: center;
 }
 
+.history-header h4 {
+    padding: 10px;
+    font-weight: 200;
+}
+
 .valid-input-response {
     display: flex;
     flex-direction: row;
@@ -204,6 +209,7 @@ body {
 
         }
             .footer-content {
+                padding: 10px;
                 height: 20vh;
                 width: 100vw;
                 background-color: #ABABAB;
@@ -211,6 +217,7 @@ body {
                 .footer-content a {
                     color: #F5F5F5;
                     font-weight: bold;
+                    text-decoration: none;
                 }
                 .footer-content a:hover {
                     color: #FFBFBF;
