@@ -110,22 +110,24 @@ function user_request_valid(): bool
 
 function render_history_content()
 {
+    echo "<div class='history-header'>Request history</div>";
     $history_exists = (isset($_SESSION['x_history'])) && (isset($_SESSION['y_history'])) && (isset($_SESSION['r_history']));
     if ($history_exists) {
         // here in request history we gotta use objects of response class and not request class, because response contains result which we gonna need here
         $response_history = construct_response_history();
         if (sizeof($response_history) < 1) {
-            echo 'History is empty';
+            echo '<div>History is empty</div>';
         }
         foreach ($response_history as $current_response_index=>$current_response) {
-            echo '<br>' . 'x: ' . $current_response->getUserRequest()->getPoint()->getX() .
-                ' y: ' . $current_response->getUserRequest()->getPoint()->getY() .
-                ' r: ' . $current_response->getUserRequest()->getR() .
-                ' result : ' . $current_response->point_belongs_area();
+            echo '<div class="request">' . '<div>x: ' . $current_response->getUserRequest()->getPoint()->getX() .
+                '</div><div>y: ' . $current_response->getUserRequest()->getPoint()->getY() .
+                '</div><div>r: ' . $current_response->getUserRequest()->getR() .
+                '</div><div>result : ' . $current_response->point_belongs_area() . "</div></div>";
+
         }
 
     } else {
-        echo 'History is empty';
+        echo '<div>History is empty</div>';
     }
 }
 

@@ -159,6 +159,23 @@ body {
     width: 14vw;
 }
 
+.submit-button {
+    display: flex;
+    justify-content: center;
+}
+
+.history {
+    display: flex;
+    flex-direction: column;
+}
+
+.request {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+
                 .main-content > * {
                     border-radius: 20px;
                     height: 40vh;

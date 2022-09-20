@@ -53,7 +53,10 @@
         </div>
 
     </div>
-    <button id="submit-button">SUBMIT BUTTON</button>
+    <div class="submit-button">
+        <button id="submit-button">Check!</button>
+    </div>
+
 
 
     <!-- fake R -->

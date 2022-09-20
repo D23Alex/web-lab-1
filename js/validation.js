@@ -1,4 +1,4 @@
-const VALIDATION_MESSAGES_PREFIX = "Invalid input - ";
+const VALIDATION_MESSAGES_PREFIX = "Input comment - ";
 
 class ValidationResult {
     _isValid;
