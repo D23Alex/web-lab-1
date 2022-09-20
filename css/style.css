@@ -214,14 +214,20 @@ body {
                 width: 100vw;
                 background-color: #ABABAB;
                 color: #F5F5F5;
+                font-weight: bold;
+                display: flex;
             }
                 .footer-content a {
-                    font-weight: bold;
                     text-decoration: none;
                     color: #FFBFBF;
                 }
                 .footer-content a:hover {
                     color: #5E5E5E;
+                }
+
+                .footer-line {
+                    margin-top: 5px;
+                    margin-bottom: 5px;
                 }
 
 
