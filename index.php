@@ -106,7 +106,7 @@ function render_history_content()
         // here in request history we gotta use objects of response class and not request class, because response contains result which we gonna need here
         $response_history = construct_response_history();
         if (sizeof($response_history) < 1) {
-            echo '<div>History is empty</div>';
+            echo '<div><request>History is empty</request></div>';
         }
         foreach ($response_history as $current_response_index=>$current_response) {
             echo '<div class="request">' . '<div>' . 'time: ' . date('h:i:s') . '</div>' . '<div>x: ' . $current_response->getUserRequest()->getPoint()->getX() .
