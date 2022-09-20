@@ -109,7 +109,7 @@ function render_history_content()
             echo '<div>History is empty</div>';
         }
         foreach ($response_history as $current_response_index=>$current_response) {
-            echo '<div class="request">' . '<div>' . 'time:' . date('h:i:s') . '</div>' . '<div>x: ' . $current_response->getUserRequest()->getPoint()->getX() .
+            echo '<div class="request">' . '<div>' . 'time: ' . date('h:i:s') . '</div>' . '<div>x: ' . $current_response->getUserRequest()->getPoint()->getX() .
                 '</div><div>y: ' . $current_response->getUserRequest()->getPoint()->getY() .
                 '</div><div>R: ' . $current_response->getUserRequest()->getR() .
                 '</div><div>result : ' . ($current_response->point_belongs_area() ? "true" : "false") . "</div></div>";
