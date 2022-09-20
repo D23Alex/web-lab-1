@@ -74,22 +74,12 @@ function render_point_belongs_area_response(UserRequest $user_request, PointBelo
     $x = $user_request->getPoint()->getX();
     $y = $user_request->getPoint()->getY();
     $r = $user_request->getR();
-    if ($point_belongs_area_response->point_belongs_area()) {
-        $result_classname = "yes-image";
-    } else {
-        $result_classname = "no-image";
-    }
-    echo 'start echoing point-belongs-area-response div';
     echo '<div class="point-belongs-area-response">
     <div class="valid-input-response">
         <div class="result-table-cell">x: ' . $x . '</div>
         <div class="result-table-cell">y: ' . $y . '</div>
         <div class="result-table-cell">R: ' . $r . '</div>
-        <div class="result-table-cell">
-            <div class="' . $result_classname . '">
-            OK/Fail text
-            </div>
-        </div>
+        <div class="result-table-cell">result: ' . ($point_belongs_area_response->point_belongs_area() ? "true" : "false") . '</div>
     </div>
 </div>';
 }
@@ -110,7 +100,7 @@ function user_request_valid(): bool
 
 function render_history_content()
 {
-    echo "<div class='history-header'>Request history</div>";
+    echo "<div class='history-header'><h4>Request history</h4></div>";
     $history_exists = (isset($_SESSION['x_history'])) && (isset($_SESSION['y_history'])) && (isset($_SESSION['r_history']));
     if ($history_exists) {
         // here in request history we gotta use objects of response class and not request class, because response contains result which we gonna need here
@@ -121,8 +111,8 @@ function render_history_content()
         foreach ($response_history as $current_response_index=>$current_response) {
             echo '<div class="request">' . '<div>x: ' . $current_response->getUserRequest()->getPoint()->getX() .
                 '</div><div>y: ' . $current_response->getUserRequest()->getPoint()->getY() .
-                '</div><div>r: ' . $current_response->getUserRequest()->getR() .
-                '</div><div>result : ' . $current_response->point_belongs_area() . "</div></div>";
+                '</div><div>R: ' . $current_response->getUserRequest()->getR() .
+                '</div><div>result : ' . ($current_response->point_belongs_area() ? "true" : "false") . "</div></div>";
 
         }
 

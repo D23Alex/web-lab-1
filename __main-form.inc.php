@@ -30,7 +30,7 @@
     <div class="user-input" id="y-input">
         <div class="inputs">
             <label for="y-text-input">Y</label>
-            <input type="text" id="y-text-input" name="y-input" value="0">
+            <input class="y-text-input" type="text" id="y-text-input" name="y-input" value="0">
         </div>
         <div class="validation-result" id="y-validation-result">
 
