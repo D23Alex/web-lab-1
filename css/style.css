@@ -213,14 +213,15 @@ body {
                 height: 20vh;
                 width: 100vw;
                 background-color: #ABABAB;
+                color: #F5F5F5;
             }
                 .footer-content a {
-                    color: #F5F5F5;
                     font-weight: bold;
                     text-decoration: none;
+                    color: #FFBFBF;
                 }
                 .footer-content a:hover {
-                    color: #FFBFBF;
+                    color: #5E5E5E;
                 }
 
 
